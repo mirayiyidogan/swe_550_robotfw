@@ -36,6 +36,45 @@ Consider installing the following extensions to enhance your development experie
 - To run all the tests, use the following command:
 `robot -d result rf_code_basic\tests\api`
 
+## Code
+The provided code consists of several functions that serve different purposes:
+
+1. /login (POST):
+
+- Purpose: Handles user login/authentication.
+- Request method: POST
+- Parameters: Expects a JSON payload containing the "username" and "password" fields.
+- Returns: If the provided username and password match the predefined values ("admin" and "masterPass"), it generates a token and returns it in the response body along with a status code of 200. Otherwise, it returns a 401 status code.
+
+2. /users (GET):
+
+- Purpose: Retrieves a list of all users.
+- Request method: GET
+- Parameters: Accepts an optional query parameter called "filter" (e.g., /users?filter=all).
+- Returns: If the "filter" query parameter is set to "all," it retrieves all users from the JSON database and returns them in the response body with a status code of 200. Otherwise, it returns an empty response body with a status code of 200.
+
+3. /users (POST):
+
+- Purpose: Creates a new user.
+- Request method: POST
+- Parameters: Expects a JSON payload containing user data, including the "contracts" field, which should contain an array of contract objects.
+- Returns: If the number of contracts is between 1 and 3 and the user data is valid, it generates a random ID, adds the user to the JSON database, and returns the generated ID in the response body with a status code of 201. If the data is invalid or the number of contracts is not within the allowed range, it returns an error message with a status code of 400.
+
+4. /users/{id} (DELETE):
+
+- Purpose: Deletes a user with the specified ID.
+- Request method: DELETE
+- Parameters: Expects a path parameter called "id" that specifies the ID of the user to be deleted.
+- Returns: If a user with the specified ID exists, it removes the user from the JSON database and returns a success message with a status code of 200. If the ID is not an integer or no user with the specified ID is found, it returns an error message with a status code of 400 or 404, respectively.
+
+5. /users/{id} (GET):
+
+- Purpose: Retrieves information about a specific user.
+- Request method: GET
+- Parameters: Expects a path parameter called "id" that specifies the ID of the user to retrieve.
+- Returns: If a user with the specified ID exists, it retrieves the user's information from the JSON database and returns it in the response body with a status code of 200. If the ID is not an integer or no user with the specified ID is found, it returns an error message with a status code of 400 or 404, respectively.
+The code also includes error handlers for the 404 (Not Found) and 401 (Unauthorized) status codes, which return appropriate error messages.
+
 # Test Cases
 
 ## Happy Case
