@@ -53,8 +53,6 @@ Consider installing the following extensions to enhance your development experie
 4. Store the response in the variable `${response}`.
 5. Validate the JSON response against the reference schema (`${GLOBAL_SCHEMA_LOGIN}`) using the `Validate Json Schema` keyword.
 
-By executing this test case, you can ensure that the login API endpoint is functioning correctly and returns the expected status code and response structure.
-
 ### Verify Delete Users
 
 **Description:** This test case verifies the functionality of deleting users through the Delete User API endpoint.
@@ -88,8 +86,6 @@ By executing this test case, you can ensure that the login API endpoint is funct
 4. Store the response in the variable `${response}`.
 5. Validate the JSON response against the reference schema `${GLOBAL_SCHEMA_USERS}`.
 
-By executing this test case, you can ensure that the Get All Users API endpoint is functioning correctly and returns the expected status code and response structure.
-
 ### Verify Create New User ###
 Description: This test case verifies the functionality of creating a new user through the Create User API endpoint.
 
@@ -100,19 +96,16 @@ Description: This test case verifies the functionality of creating a new user th
 4. Set the suite variable ${SUITE_USER_ID} with the user ID.
 5. Validate the JSON response against the user post schema ${GLOBAL_SCHEMA_USER_POST} using the Validate Schema keyword.
 
-Please note that the above test case assumes the existence of the necessary resource files, variables, and keywords, and it should be adjusted as per your specific implementation.
+### Test Case: Verify Existing User ###
 
-Test Case: Verify Existing User
+**Description:** This test case verifies the functionality of retrieving an existing user through the Get User API endpoint.
 
-Description: This test case verifies the functionality of retrieving an existing user through the Get User API endpoint.
+**Steps:**
 
-Test Steps:
-
-Log a message to the console indicating the request is being sent to ${GLOBAL_ENDPOINT_USERS}/1.
-Send a GET request to retrieve the user with ID 1.
-Store the response in the variable ${response}.
-Validate the JSON response against the user ID schema ${GLOBAL_SCHEMA_USERS_ID} using the Validate Schema keyword.
-Please note that the above test case assumes the existence of the necessary resource files, variables, and keywords, and it should be adjusted as per your specific implementation.
+1. Log a message to the console indicating the request is being sent to ${GLOBAL_ENDPOINT_USERS}/1.
+2. Send a GET request to retrieve the user with ID 1.
+3. Store the response in the variable ${response}.
+4. Validate the JSON response against the user ID schema ${GLOBAL_SCHEMA_USERS_ID} using the Validate Schema keyword.
 
 ## Unhappy Case
 
