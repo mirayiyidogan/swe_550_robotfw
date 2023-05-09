@@ -1,29 +1,29 @@
-###Project Preparation###
+#Project Preparation
+##Project Requirements:
 
-1- Project Requirements
--Python version 3.8 or higher (You need to select "add python to PATH" in order for us to build up virtual environment)
--VSCode or PyCharm
--Virtual Environment
---in order to set up a virtual environment we need to upload related libraries: pip install virtualenvwrapper-win
+-Python version 3.8 or higher (Make sure to select "Add Python to PATH" during installation to enable easy access)
+-Integrated Development Environment (IDE) such as VSCode or PyCharm
+-Virtual Environment:
+--Install the virtualenvwrapper-win library by running the command: pip install virtualenvwrapper-win
 
-2-Setting up the Project
-In order to start your project first you need to open virtual environment in case you wanted to create another virtual
-environment. Open a command prompt and write:
-- mkvirtualenv 550 #There is already a virtualenv in your project folder so you may use that one
-- workon 550 #In order to work on the virtual environment which is already created, run given command
-- cd contents #Go to the directory where the "contents" file is located
-- pip install -r requirements.txt #This command will download the related packages we need for Robotframework testing
+##Setting up the Project:
 
-3-Extension Installations(prefable)
-Python
-Robot Framework Language Server #Inside the extension settings, need to set up Robot › Language-server: Python as 
-"C:\Users\beyn\Envs\550\Scripts\python.exe" means where you python package is located
+-To begin, open a command prompt or terminal to set up and activate the virtual environment:
+-Create a new virtual environment (if needed) by running: mkvirtualenv 550 (You can use an existing virtualenv as well)
+-Activate the virtual environment by running: workon 550
+-Navigate to the directory where the "contents" file is located:
+--Change directory (cd) to the appropriate location: cd path/to/contents
+-Install the required packages by running: pip install -r requirements.txt (This command will download the necessary packages for Robot Framework testing)
 
-In order to run the program , "python main.py"
+##Extension Installations (optional but preferable):
 
+-Python Extension for your IDE
+-Robot Framework Language Server:
+--Configure the extension settings by setting the Robot › Language-server: Python path to the location of your Python interpreter, e.g., "C:\Users\beyn\Envs\550\Scripts\python.exe"
 
-In order to run all test, need to run above command
-robot -d result rf_code_basic\tests\api
+$$Running the Program:
 
-In order to use related postman collection, you need to first use "login" to authanticate with "inherit from parent which is login in this case. Our RobotFW starts with login as well in order to authanticate.
+-To execute the program, run the command: python main.py
+-Running the Tests:
 
+--To run all the tests, use the following command: robot -d result rf_code_basic\tests\api
