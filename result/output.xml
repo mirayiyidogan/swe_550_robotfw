@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230509 21:38:39.601" rpa="false" schemaversion="3">
-<suite id="s1" name="Api" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api">
-<suite id="s1-s1" name="Endpoints" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints">
-<suite id="s1-s1-s1" name="Login" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\login">
-<suite id="s1-s1-s1-s1" name="Verify Login" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\login\verify_login.robot">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230509 21:47:38.987" rpa="false" schemaversion="3">
+<suite id="s1" name="Api" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api">
+<suite id="s1-s1" name="Endpoints" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints">
+<suite id="s1-s1-s1" name="Login" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\login">
+<suite id="s1-s1-s1-s1" name="Verify Login" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\login\verify_login.robot">
 <test id="s1-s1-s1-s1-t1" name="Verify Login Returns 200" line="8">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_LOGIN}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.823" endtime="20230509 21:38:39.824"/>
+<status status="PASS" starttime="20230509 21:47:39.190" endtime="20230509 21:47:39.192"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{jsonBody}</var>
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.825" level="INFO">&amp;{jsonBody} = { username=admin | password=masterPass }</msg>
-<status status="PASS" starttime="20230509 21:38:39.825" endtime="20230509 21:38:39.825"/>
+<msg timestamp="20230509 21:47:39.193" level="INFO">&amp;{jsonBody} = { username=admin | password=masterPass }</msg>
+<status status="PASS" starttime="20230509 21:47:39.193" endtime="20230509 21:47:39.193"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -24,30 +24,30 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.830" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.202" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
  body=b'{"username": "admin", "password": "masterPass"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.831" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.202" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '49', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '49', 'Connection': 'close'} 
  body={"token":"asfd234fkaDkf2asdf2a889DFJSFlsDFWf21"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.831" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.825" endtime="20230509 21:38:39.831"/>
+<msg timestamp="20230509 21:47:39.202" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.193" endtime="20230509 21:47:39.202"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>input_json=${response.json()}</arg>
 <arg>reference_schema_path=${GLOBAL_SCHEMA_LOGIN}</arg>
-<status status="PASS" starttime="20230509 21:38:39.831" endtime="20230509 21:38:39.836"/>
+<status status="PASS" starttime="20230509 21:47:39.203" endtime="20230509 21:47:39.226"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.823" endtime="20230509 21:38:39.836"/>
+<status status="PASS" starttime="20230509 21:47:39.190" endtime="20230509 21:47:39.226"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:39.634" endtime="20230509 21:38:39.837"/>
+<status status="PASS" starttime="20230509 21:47:39.011" endtime="20230509 21:47:39.228"/>
 </suite>
-<suite id="s1-s1-s1-s2" name="Verify Login Wrong Auth" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\login\verify_login_wrong_auth.robot">
+<suite id="s1-s1-s1-s2" name="Verify Login Wrong Auth" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\login\verify_login_wrong_auth.robot">
 <test id="s1-s1-s1-s2-t1" name="Verify Login With Wrong Password Returns 401" line="10">
 <kw name="Custom Test Template">
 <arg>admin</arg>
@@ -55,15 +55,15 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_LOGIN}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.851" endtime="20230509 21:38:39.851"/>
+<status status="PASS" starttime="20230509 21:47:39.238" endtime="20230509 21:47:39.239"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{jsonBody}</var>
 <arg>username=${username}</arg>
 <arg>password=${password}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.852" level="INFO">&amp;{jsonBody} = { username=admin | password=wrongPass }</msg>
-<status status="PASS" starttime="20230509 21:38:39.852" endtime="20230509 21:38:39.852"/>
+<msg timestamp="20230509 21:47:39.240" level="INFO">&amp;{jsonBody} = { username=admin | password=wrongPass }</msg>
+<status status="PASS" starttime="20230509 21:47:39.239" endtime="20230509 21:47:39.240"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -71,19 +71,19 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.857" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.244" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
  body=b'{"username": "admin", "password": "wrongPass"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.857" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.245" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.857" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.852" endtime="20230509 21:38:39.857"/>
+<msg timestamp="20230509 21:47:39.245" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.240" endtime="20230509 21:47:39.245"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -91,18 +91,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.858" endtime="20230509 21:38:39.858"/>
+<status status="PASS" starttime="20230509 21:47:39.246" endtime="20230509 21:47:39.246"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.858" endtime="20230509 21:38:39.860"/>
+<status status="PASS" starttime="20230509 21:47:39.246" endtime="20230509 21:47:39.248"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.857" endtime="20230509 21:38:39.860"/>
+<status status="PASS" starttime="20230509 21:47:39.245" endtime="20230509 21:47:39.248"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.850" endtime="20230509 21:38:39.860"/>
+<status status="PASS" starttime="20230509 21:47:39.238" endtime="20230509 21:47:39.248"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.849" endtime="20230509 21:38:39.861"/>
+<status status="PASS" starttime="20230509 21:47:39.238" endtime="20230509 21:47:39.248"/>
 </test>
 <test id="s1-s1-s1-s2-t2" name="Verify Login With Wrong User Returns 401" line="12">
 <kw name="Custom Test Template">
@@ -111,15 +111,15 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_LOGIN}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.863" endtime="20230509 21:38:39.864"/>
+<status status="PASS" starttime="20230509 21:47:39.250" endtime="20230509 21:47:39.251"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{jsonBody}</var>
 <arg>username=${username}</arg>
 <arg>password=${password}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.865" level="INFO">&amp;{jsonBody} = { username=guest | password=masterPass }</msg>
-<status status="PASS" starttime="20230509 21:38:39.864" endtime="20230509 21:38:39.865"/>
+<msg timestamp="20230509 21:47:39.252" level="INFO">&amp;{jsonBody} = { username=guest | password=masterPass }</msg>
+<status status="PASS" starttime="20230509 21:47:39.251" endtime="20230509 21:47:39.252"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -127,19 +127,19 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.869" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.255" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
  body=b'{"username": "guest", "password": "masterPass"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.869" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.256" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.869" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.865" endtime="20230509 21:38:39.869"/>
+<msg timestamp="20230509 21:47:39.256" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.252" endtime="20230509 21:47:39.256"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -147,18 +147,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.870" endtime="20230509 21:38:39.870"/>
+<status status="PASS" starttime="20230509 21:47:39.257" endtime="20230509 21:47:39.257"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.870" endtime="20230509 21:38:39.872"/>
+<status status="PASS" starttime="20230509 21:47:39.257" endtime="20230509 21:47:39.259"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.869" endtime="20230509 21:38:39.872"/>
+<status status="PASS" starttime="20230509 21:47:39.256" endtime="20230509 21:47:39.259"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.863" endtime="20230509 21:38:39.872"/>
+<status status="PASS" starttime="20230509 21:47:39.250" endtime="20230509 21:47:39.259"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.862" endtime="20230509 21:38:39.873"/>
+<status status="PASS" starttime="20230509 21:47:39.250" endtime="20230509 21:47:39.260"/>
 </test>
 <test id="s1-s1-s1-s2-t3" name="Verify Login With Empty Data Returns 401" line="14">
 <kw name="Custom Test Template">
@@ -167,15 +167,15 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_LOGIN}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.875" endtime="20230509 21:38:39.876"/>
+<status status="PASS" starttime="20230509 21:47:39.262" endtime="20230509 21:47:39.263"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{jsonBody}</var>
 <arg>username=${username}</arg>
 <arg>password=${password}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.876" level="INFO">&amp;{jsonBody} = { username= | password= }</msg>
-<status status="PASS" starttime="20230509 21:38:39.876" endtime="20230509 21:38:39.876"/>
+<msg timestamp="20230509 21:47:39.265" level="INFO">&amp;{jsonBody} = { username= | password= }</msg>
+<status status="PASS" starttime="20230509 21:47:39.263" endtime="20230509 21:47:39.265"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -183,19 +183,19 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.881" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.270" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '32', 'Content-Type': 'application/json'} 
  body=b'{"username": "", "password": ""}' 
  </msg>
-<msg timestamp="20230509 21:38:39.881" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.270" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.881" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.876" endtime="20230509 21:38:39.881"/>
+<msg timestamp="20230509 21:47:39.270" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.265" endtime="20230509 21:47:39.270"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -203,18 +203,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.882" endtime="20230509 21:38:39.882"/>
+<status status="PASS" starttime="20230509 21:47:39.271" endtime="20230509 21:47:39.271"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.882" endtime="20230509 21:38:39.884"/>
+<status status="PASS" starttime="20230509 21:47:39.271" endtime="20230509 21:47:39.273"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.881" endtime="20230509 21:38:39.884"/>
+<status status="PASS" starttime="20230509 21:47:39.270" endtime="20230509 21:47:39.273"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.874" endtime="20230509 21:38:39.884"/>
+<status status="PASS" starttime="20230509 21:47:39.261" endtime="20230509 21:47:39.273"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.874" endtime="20230509 21:38:39.885"/>
+<status status="PASS" starttime="20230509 21:47:39.260" endtime="20230509 21:47:39.273"/>
 </test>
 <test id="s1-s1-s1-s2-t4" name="Verify Login With Wrong User And Password Returns 401" line="16">
 <kw name="Custom Test Template">
@@ -223,15 +223,15 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_LOGIN}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.887" endtime="20230509 21:38:39.888"/>
+<status status="PASS" starttime="20230509 21:47:39.275" endtime="20230509 21:47:39.275"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{jsonBody}</var>
 <arg>username=${username}</arg>
 <arg>password=${password}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.889" level="INFO">&amp;{jsonBody} = { username=guest | password=wrongPass }</msg>
-<status status="PASS" starttime="20230509 21:38:39.888" endtime="20230509 21:38:39.889"/>
+<msg timestamp="20230509 21:47:39.276" level="INFO">&amp;{jsonBody} = { username=guest | password=wrongPass }</msg>
+<status status="PASS" starttime="20230509 21:47:39.275" endtime="20230509 21:47:39.276"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -239,19 +239,19 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.893" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.280" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
  body=b'{"username": "guest", "password": "wrongPass"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.893" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.280" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.893" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.889" endtime="20230509 21:38:39.893"/>
+<msg timestamp="20230509 21:47:39.280" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.276" endtime="20230509 21:47:39.280"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -259,25 +259,25 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.894" endtime="20230509 21:38:39.894"/>
+<status status="PASS" starttime="20230509 21:47:39.281" endtime="20230509 21:47:39.282"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.894" endtime="20230509 21:38:39.896"/>
+<status status="PASS" starttime="20230509 21:47:39.282" endtime="20230509 21:47:39.283"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.893" endtime="20230509 21:38:39.896"/>
+<status status="PASS" starttime="20230509 21:47:39.280" endtime="20230509 21:47:39.284"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.886" endtime="20230509 21:38:39.896"/>
+<status status="PASS" starttime="20230509 21:47:39.274" endtime="20230509 21:47:39.284"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.886" endtime="20230509 21:38:39.897"/>
+<status status="PASS" starttime="20230509 21:47:39.274" endtime="20230509 21:47:39.284"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:39.838" endtime="20230509 21:38:39.898"/>
+<status status="PASS" starttime="20230509 21:47:39.230" endtime="20230509 21:47:39.286"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:39.631" endtime="20230509 21:38:39.900"/>
+<status status="PASS" starttime="20230509 21:47:39.008" endtime="20230509 21:47:39.287"/>
 </suite>
-<suite id="s1-s1-s2" name="Users" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users">
-<suite id="s1-s1-s2-s1" name="Verify Delete Users" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users\verify_delete_users.robot">
+<suite id="s1-s1-s2" name="Users" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users">
+<suite id="s1-s1-s2-s1" name="Verify Delete Users" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users\verify_delete_users.robot">
 <kw name="Custom Suite Setup" type="SETUP">
 <kw name="Authorize" library="setupTeardowns">
 <if>
@@ -287,8 +287,8 @@
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.921" level="INFO">&amp;{jsonBody} = { username=admin | password=masterPass }</msg>
-<status status="PASS" starttime="20230509 21:38:39.921" endtime="20230509 21:38:39.921"/>
+<msg timestamp="20230509 21:47:39.315" level="INFO">&amp;{jsonBody} = { username=admin | password=masterPass }</msg>
+<status status="PASS" starttime="20230509 21:47:39.315" endtime="20230509 21:47:39.315"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -296,61 +296,61 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.925" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.336" level="INFO">POST Request : url=http://127.0.0.1:5000/login 
  path_url=/login 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
  body=b'{"username": "admin", "password": "masterPass"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.926" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
+<msg timestamp="20230509 21:47:39.336" level="INFO">POST Response : url=http://127.0.0.1:5000/login 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '49', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '49', 'Connection': 'close'} 
  body={"token":"asfd234fkaDkf2asdf2a889DFJSFlsDFWf21"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.926" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.921" endtime="20230509 21:38:39.926"/>
+<msg timestamp="20230509 21:47:39.336" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.315" endtime="20230509 21:47:39.336"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${responseJson}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230509 21:38:39.927" level="INFO">${responseJson} = {'token': 'asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.926" endtime="20230509 21:38:39.927"/>
+<msg timestamp="20230509 21:47:39.337" level="INFO">${responseJson} = {'token': 'asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.337" endtime="20230509 21:47:39.337"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${token}</var>
 <arg>${responseJson}</arg>
 <arg>token</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20230509 21:38:39.927" level="INFO">${token} = asfd234fkaDkf2asdf2a889DFJSFlsDFWf21</msg>
-<status status="PASS" starttime="20230509 21:38:39.927" endtime="20230509 21:38:39.927"/>
+<msg timestamp="20230509 21:47:39.337" level="INFO">${token} = asfd234fkaDkf2asdf2a889DFJSFlsDFWf21</msg>
+<status status="PASS" starttime="20230509 21:47:39.337" endtime="20230509 21:47:39.337"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.927" level="INFO">${headers} = {'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.927" endtime="20230509 21:38:39.927"/>
+<msg timestamp="20230509 21:47:39.338" level="INFO">${headers} = {'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.338" endtime="20230509 21:47:39.338"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_HEADER}</arg>
 <arg>${headers}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230509 21:38:39.927" level="INFO">${GLOBAL_AUTH_HEADER} = {'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.927" endtime="20230509 21:38:39.927"/>
+<msg timestamp="20230509 21:47:39.338" level="INFO">${GLOBAL_AUTH_HEADER} = {'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.338" endtime="20230509 21:47:39.338"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_SET}</arg>
 <arg>${True}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230509 21:38:39.928" level="INFO">${GLOBAL_AUTH_SET} = True</msg>
-<status status="PASS" starttime="20230509 21:38:39.928" endtime="20230509 21:38:39.928"/>
+<msg timestamp="20230509 21:47:39.338" level="INFO">${GLOBAL_AUTH_SET} = True</msg>
+<status status="PASS" starttime="20230509 21:47:39.338" endtime="20230509 21:47:39.338"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.920" endtime="20230509 21:38:39.928"/>
+<status status="PASS" starttime="20230509 21:47:39.315" endtime="20230509 21:47:39.338"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.920" endtime="20230509 21:38:39.928"/>
+<status status="PASS" starttime="20230509 21:47:39.315" endtime="20230509 21:47:39.338"/>
 </if>
-<status status="PASS" starttime="20230509 21:38:39.920" endtime="20230509 21:38:39.928"/>
+<status status="PASS" starttime="20230509 21:47:39.315" endtime="20230509 21:47:39.338"/>
 </kw>
 <kw name="Create New User" library="setupTeardowns">
 <var>${id}</var>
@@ -358,8 +358,8 @@
 <kw name="Create List" library="BuiltIn">
 <var>@{contracts}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230509 21:38:39.929" level="INFO">@{contracts} = [ ]</msg>
-<status status="PASS" starttime="20230509 21:38:39.929" endtime="20230509 21:38:39.929"/>
+<msg timestamp="20230509 21:47:39.339" level="INFO">@{contracts} = [ ]</msg>
+<status status="PASS" starttime="20230509 21:47:39.339" endtime="20230509 21:47:39.339"/>
 </kw>
 <if>
 <branch type="IF" condition="${numberOfContracts} &gt; ${0}">
@@ -375,22 +375,22 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.930" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.930" endtime="20230509 21:38:39.930"/>
+<msg timestamp="20230509 21:47:39.340" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.340" endtime="20230509 21:47:39.340"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:39.931" endtime="20230509 21:38:39.931"/>
+<status status="PASS" starttime="20230509 21:47:39.340" endtime="20230509 21:47:39.340"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.930" endtime="20230509 21:38:39.931"/>
+<status status="PASS" starttime="20230509 21:47:39.339" endtime="20230509 21:47:39.340"/>
 </iter>
-<status status="PASS" starttime="20230509 21:38:39.930" endtime="20230509 21:38:39.931"/>
+<status status="PASS" starttime="20230509 21:47:39.339" endtime="20230509 21:47:39.340"/>
 </for>
-<status status="PASS" starttime="20230509 21:38:39.929" endtime="20230509 21:38:39.931"/>
+<status status="PASS" starttime="20230509 21:47:39.339" endtime="20230509 21:47:39.340"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.929" endtime="20230509 21:38:39.931"/>
+<status status="PASS" starttime="20230509 21:47:39.339" endtime="20230509 21:47:39.340"/>
 </if>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -403,8 +403,8 @@
 <arg>surname=${surname}</arg>
 <arg>zip=${zip}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.931" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'to...</msg>
-<status status="PASS" starttime="20230509 21:38:39.931" endtime="20230509 21:38:39.931"/>
+<msg timestamp="20230509 21:47:39.341" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'to...</msg>
+<status status="PASS" starttime="20230509 21:47:39.340" endtime="20230509 21:47:39.341"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -413,26 +413,26 @@
 <arg>expected_status=${expectedStatuscode}</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:39.937" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.352" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '219', 'Content-Type': 'application/json'} 
  body=b'{"active": true, "city": "Testcity", "contracts": [{"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}], "email": "tom@miller.com", "name": "miller", "street": "1st street", "surname": "tom", "zip": "91343"}' 
  </msg>
-<msg timestamp="20230509 21:38:39.937" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.352" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=201, reason=CREATED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '12', 'Connection': 'close'} 
- body={"ID":1605}
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '12', 'Connection': 'close'} 
+ body={"ID":6595}
  
  </msg>
-<msg timestamp="20230509 21:38:39.938" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.931" endtime="20230509 21:38:39.938"/>
+<msg timestamp="20230509 21:47:39.352" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.341" endtime="20230509 21:47:39.353"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${userId}</var>
 <arg>${empty}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230509 21:38:39.938" level="INFO">${userId} = </msg>
-<status status="PASS" starttime="20230509 21:38:39.938" endtime="20230509 21:38:39.938"/>
+<msg timestamp="20230509 21:47:39.354" level="INFO">${userId} = </msg>
+<status status="PASS" starttime="20230509 21:47:39.353" endtime="20230509 21:47:39.354"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${expectedStatuscode}&quot; == &quot;201&quot;">
@@ -441,25 +441,25 @@
 <arg>${response.json()}</arg>
 <arg>ID</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20230509 21:38:39.939" level="INFO">${userId} = 1605</msg>
-<status status="PASS" starttime="20230509 21:38:39.939" endtime="20230509 21:38:39.939"/>
+<msg timestamp="20230509 21:47:39.355" level="INFO">${userId} = 6595</msg>
+<status status="PASS" starttime="20230509 21:47:39.354" endtime="20230509 21:47:39.355"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.938" endtime="20230509 21:38:39.939"/>
+<status status="PASS" starttime="20230509 21:47:39.354" endtime="20230509 21:47:39.355"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.938" endtime="20230509 21:38:39.939"/>
+<status status="PASS" starttime="20230509 21:47:39.354" endtime="20230509 21:47:39.355"/>
 </if>
-<msg timestamp="20230509 21:38:39.939" level="INFO">${id} = 1605</msg>
-<msg timestamp="20230509 21:38:39.940" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.928" endtime="20230509 21:38:39.940"/>
+<msg timestamp="20230509 21:47:39.355" level="INFO">${id} = 6595</msg>
+<msg timestamp="20230509 21:47:39.355" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.338" endtime="20230509 21:47:39.355"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${SUITE_USER_ID}</arg>
 <arg>${id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20230509 21:38:39.940" level="INFO">${SUITE_USER_ID} = 1605</msg>
-<status status="PASS" starttime="20230509 21:38:39.940" endtime="20230509 21:38:39.940"/>
+<msg timestamp="20230509 21:47:39.356" level="INFO">${SUITE_USER_ID} = 6595</msg>
+<status status="PASS" starttime="20230509 21:47:39.355" endtime="20230509 21:47:39.356"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.920" endtime="20230509 21:38:39.940"/>
+<status status="PASS" starttime="20230509 21:47:39.314" endtime="20230509 21:47:39.356"/>
 </kw>
 <test id="s1-s1-s2-s1-t1" name="Verify Delete Users" line="12">
 <kw name="Delete User" library="setupTeardowns">
@@ -471,22 +471,22 @@
 <arg>expected_status=200</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20230509 21:38:39.954" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1605 
- path_url=/users/1605 
+<msg timestamp="20230509 21:47:39.369" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/6595 
+ path_url=/users/6595 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:39.954" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1605 
+<msg timestamp="20230509 21:47:39.369" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/6595 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
  body={"MESSAGE":"OK"}
  
  </msg>
-<msg timestamp="20230509 21:38:39.954" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.941" endtime="20230509 21:38:39.954"/>
+<msg timestamp="20230509 21:47:39.369" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.356" endtime="20230509 21:47:39.369"/>
 </kw>
-<msg timestamp="20230509 21:38:39.954" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.940" endtime="20230509 21:38:39.954"/>
+<msg timestamp="20230509 21:47:39.369" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.356" endtime="20230509 21:47:39.369"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -494,20 +494,20 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.955" endtime="20230509 21:38:39.956"/>
+<status status="PASS" starttime="20230509 21:47:39.370" endtime="20230509 21:47:39.370"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.956" endtime="20230509 21:38:39.957"/>
+<status status="PASS" starttime="20230509 21:47:39.371" endtime="20230509 21:47:39.373"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.955" endtime="20230509 21:38:39.957"/>
+<status status="PASS" starttime="20230509 21:47:39.370" endtime="20230509 21:47:39.373"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.940" endtime="20230509 21:38:39.957"/>
+<status status="PASS" starttime="20230509 21:47:39.356" endtime="20230509 21:47:39.373"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:39.904" endtime="20230509 21:38:39.959"/>
+<status status="PASS" starttime="20230509 21:47:39.292" endtime="20230509 21:47:39.374"/>
 </suite>
-<suite id="s1-s1-s2-s2" name="Verify Get Users" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users\verify_get_users.robot">
+<suite id="s1-s1-s2-s2" name="Verify Get Users" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users\verify_get_users.robot">
 <kw name="Authorize" library="setupTeardowns" type="SETUP">
 <if>
 <branch type="IF" condition="not ${GLOBAL_AUTH_SET}">
@@ -516,7 +516,7 @@
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.969"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -524,57 +524,57 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.969"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${responseJson}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.969"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${token}</var>
 <arg>${responseJson}</arg>
 <arg>token</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.969"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.970"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_HEADER}</arg>
 <arg>${headers}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.970" endtime="20230509 21:38:39.970"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_SET}</arg>
 <arg>${True}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.970" endtime="20230509 21:38:39.970"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.383"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.970"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.382" endtime="20230509 21:47:39.383"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.969" endtime="20230509 21:38:39.970"/>
+<status status="PASS" starttime="20230509 21:47:39.382" endtime="20230509 21:47:39.383"/>
 </if>
-<status status="PASS" starttime="20230509 21:38:39.968" endtime="20230509 21:38:39.970"/>
+<status status="PASS" starttime="20230509 21:47:39.382" endtime="20230509 21:47:39.383"/>
 </kw>
 <test id="s1-s1-s2-s2-t1" name="Verify All Users" line="9">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_USERS}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.971" endtime="20230509 21:38:39.971"/>
+<status status="PASS" starttime="20230509 21:47:39.384" endtime="20230509 21:47:39.385"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${params}</var>
 <arg>filter=all</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.972" level="INFO">${params} = {'filter': 'all'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.972" endtime="20230509 21:38:39.972"/>
+<msg timestamp="20230509 21:47:39.385" level="INFO">${params} = {'filter': 'all'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.385" endtime="20230509 21:47:39.385"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
@@ -583,19 +583,19 @@
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <arg>params=${params}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:39.979" level="INFO">GET Request : url=http://127.0.0.1:5000/users?filter=all 
+<msg timestamp="20230509 21:47:39.391" level="INFO">GET Request : url=http://127.0.0.1:5000/users?filter=all 
  path_url=/users?filter=all 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:39.979" level="INFO">GET Response : url=http://127.0.0.1:5000/users?filter=all 
+<msg timestamp="20230509 21:47:39.391" level="INFO">GET Response : url=http://127.0.0.1:5000/users?filter=all 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '1768', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '1771', 'Connection': 'close'} 
  body={"users":[{"active":true,"city":"Testcity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":106,"price":39.99,"type":"premium-b"}],"email":"tom@miller.com","id":1,"name":"miller","street":"1st street","surname":"tom","zip":"99122"},{"active":true,"city":"Fakecity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":22,"price":49.99,"type":"pro"},{"currency":"USD","id":105,"price":24.55,"type":"premium-a"}],"email":"celine@mayer.net","id":2,"name":"mayer","street":"Fakeburry Lane","surname":"celine","zip":"11443"},{"active":false,"city":"Frameworkcity","contracts":[{"currency":"USD","id":1,"price":0,"type":"free"}],"email":"sarah@delaney.com","id":3,"name":"delaney","street":"Robot Street","surname":"sarah","zip":"55678"},{"active":true,"city":"Testcity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"}],"email":"miray@test.com","id":4759,"name":"Maximus","street":"Maximus Lane","surname":"Max","zip":"12345"},{"active":true,"city":"Testcity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"}],"email":"miray@test.com","id":3163,"name":"Maximus","street":"Maximus Lane","surname":"Max","zip":"12345"},{"active":true,"city":"Testcity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":33,"price":9.99,"type":"basic"}],"email":"miray@test.com","id":1230,"name":"Maximus","street":"Maximus Lane","surname":"Max","zip":"12345"}]}
  
  </msg>
-<msg timestamp="20230509 21:38:39.979" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.972" endtime="20230509 21:38:39.979"/>
+<msg timestamp="20230509 21:47:39.391" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.386" endtime="20230509 21:47:39.391"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -603,20 +603,20 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.980" endtime="20230509 21:38:39.980"/>
+<status status="PASS" starttime="20230509 21:47:39.392" endtime="20230509 21:47:39.393"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:39.980" endtime="20230509 21:38:39.982"/>
+<status status="PASS" starttime="20230509 21:47:39.393" endtime="20230509 21:47:39.395"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.979" endtime="20230509 21:38:39.982"/>
+<status status="PASS" starttime="20230509 21:47:39.391" endtime="20230509 21:47:39.395"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.970" endtime="20230509 21:38:39.983"/>
+<status status="PASS" starttime="20230509 21:47:39.383" endtime="20230509 21:47:39.395"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:39.961" endtime="20230509 21:38:39.984"/>
+<status status="PASS" starttime="20230509 21:47:39.375" endtime="20230509 21:47:39.397"/>
 </suite>
-<suite id="s1-s1-s2-s3" name="Verify Post Users" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users\verify_post_users.robot">
+<suite id="s1-s1-s2-s3" name="Verify Post Users" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users\verify_post_users.robot">
 <kw name="Authorize" library="setupTeardowns" type="SETUP">
 <if>
 <branch type="IF" condition="not ${GLOBAL_AUTH_SET}">
@@ -625,7 +625,7 @@
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.994"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.405" endtime="20230509 21:47:39.405"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -633,50 +633,50 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.994"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.405" endtime="20230509 21:47:39.406"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${responseJson}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.994"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.406" endtime="20230509 21:47:39.406"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${token}</var>
 <arg>${responseJson}</arg>
 <arg>token</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.995" endtime="20230509 21:38:39.995"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.406" endtime="20230509 21:47:39.406"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.995" endtime="20230509 21:38:39.995"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.406" endtime="20230509 21:47:39.406"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_HEADER}</arg>
 <arg>${headers}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.995" endtime="20230509 21:38:39.995"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.406" endtime="20230509 21:47:39.406"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_SET}</arg>
 <arg>${True}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:39.995" endtime="20230509 21:38:39.995"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.406" endtime="20230509 21:47:39.406"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.995"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.405" endtime="20230509 21:47:39.406"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.995"/>
+<status status="PASS" starttime="20230509 21:47:39.405" endtime="20230509 21:47:39.407"/>
 </if>
-<status status="PASS" starttime="20230509 21:38:39.994" endtime="20230509 21:38:39.995"/>
+<status status="PASS" starttime="20230509 21:47:39.405" endtime="20230509 21:47:39.407"/>
 </kw>
 <test id="s1-s1-s2-s3-t1" name="Verify Create New User" line="12">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_USERS}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:39.995" endtime="20230509 21:38:39.996"/>
+<status status="PASS" starttime="20230509 21:47:39.407" endtime="20230509 21:47:39.408"/>
 </kw>
 <kw name="Create New User" library="setupTeardowns">
 <var>${id}</var>
@@ -684,8 +684,8 @@
 <kw name="Create List" library="BuiltIn">
 <var>@{contracts}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230509 21:38:39.997" level="INFO">@{contracts} = [ ]</msg>
-<status status="PASS" starttime="20230509 21:38:39.997" endtime="20230509 21:38:39.997"/>
+<msg timestamp="20230509 21:47:39.409" level="INFO">@{contracts} = [ ]</msg>
+<status status="PASS" starttime="20230509 21:47:39.409" endtime="20230509 21:47:39.409"/>
 </kw>
 <if>
 <branch type="IF" condition="${numberOfContracts} &gt; ${0}">
@@ -701,22 +701,22 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.998" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:39.998" endtime="20230509 21:38:39.998"/>
+<msg timestamp="20230509 21:47:39.410" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.410" endtime="20230509 21:47:39.410"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:39.998" endtime="20230509 21:38:39.998"/>
+<status status="PASS" starttime="20230509 21:47:39.410" endtime="20230509 21:47:39.410"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.998" endtime="20230509 21:38:39.998"/>
+<status status="PASS" starttime="20230509 21:47:39.410" endtime="20230509 21:47:39.410"/>
 </iter>
-<status status="PASS" starttime="20230509 21:38:39.998" endtime="20230509 21:38:39.998"/>
+<status status="PASS" starttime="20230509 21:47:39.409" endtime="20230509 21:47:39.410"/>
 </for>
-<status status="PASS" starttime="20230509 21:38:39.997" endtime="20230509 21:38:39.998"/>
+<status status="PASS" starttime="20230509 21:47:39.409" endtime="20230509 21:47:39.410"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:39.997" endtime="20230509 21:38:39.998"/>
+<status status="PASS" starttime="20230509 21:47:39.409" endtime="20230509 21:47:39.410"/>
 </if>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -729,8 +729,8 @@
 <arg>surname=${surname}</arg>
 <arg>zip=${zip}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:39.999" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'to...</msg>
-<status status="PASS" starttime="20230509 21:38:39.998" endtime="20230509 21:38:39.999"/>
+<msg timestamp="20230509 21:47:39.411" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'to...</msg>
+<status status="PASS" starttime="20230509 21:47:39.410" endtime="20230509 21:47:39.411"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -739,26 +739,26 @@
 <arg>expected_status=${expectedStatuscode}</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:40.005" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.417" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '219', 'Content-Type': 'application/json'} 
  body=b'{"active": true, "city": "Testcity", "contracts": [{"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}], "email": "tom@miller.com", "name": "miller", "street": "1st street", "surname": "tom", "zip": "91343"}' 
  </msg>
-<msg timestamp="20230509 21:38:40.005" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.417" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=201, reason=CREATED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '12', 'Connection': 'close'} 
- body={"ID":2021}
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '12', 'Connection': 'close'} 
+ body={"ID":1050}
  
  </msg>
-<msg timestamp="20230509 21:38:40.005" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.999" endtime="20230509 21:38:40.005"/>
+<msg timestamp="20230509 21:47:39.418" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.411" endtime="20230509 21:47:39.418"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${userId}</var>
 <arg>${empty}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230509 21:38:40.006" level="INFO">${userId} = </msg>
-<status status="PASS" starttime="20230509 21:38:40.005" endtime="20230509 21:38:40.006"/>
+<msg timestamp="20230509 21:47:39.418" level="INFO">${userId} = </msg>
+<status status="PASS" starttime="20230509 21:47:39.418" endtime="20230509 21:47:39.418"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${expectedStatuscode}&quot; == &quot;201&quot;">
@@ -767,23 +767,23 @@
 <arg>${response.json()}</arg>
 <arg>ID</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20230509 21:38:40.007" level="INFO">${userId} = 2021</msg>
-<status status="PASS" starttime="20230509 21:38:40.006" endtime="20230509 21:38:40.007"/>
+<msg timestamp="20230509 21:47:39.419" level="INFO">${userId} = 1050</msg>
+<status status="PASS" starttime="20230509 21:47:39.419" endtime="20230509 21:47:39.419"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.006" endtime="20230509 21:38:40.007"/>
+<status status="PASS" starttime="20230509 21:47:39.418" endtime="20230509 21:47:39.419"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.006" endtime="20230509 21:38:40.007"/>
+<status status="PASS" starttime="20230509 21:47:39.418" endtime="20230509 21:47:39.419"/>
 </if>
-<msg timestamp="20230509 21:38:40.007" level="INFO">${id} = 2021</msg>
-<msg timestamp="20230509 21:38:40.007" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:39.996" endtime="20230509 21:38:40.007"/>
+<msg timestamp="20230509 21:47:39.419" level="INFO">${id} = 1050</msg>
+<msg timestamp="20230509 21:47:39.419" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.408" endtime="20230509 21:47:39.419"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${SUITE_USER_ID}</arg>
 <arg>${id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20230509 21:38:40.008" level="INFO">${SUITE_USER_ID} = 2021</msg>
-<status status="PASS" starttime="20230509 21:38:40.007" endtime="20230509 21:38:40.008"/>
+<msg timestamp="20230509 21:47:39.420" level="INFO">${SUITE_USER_ID} = 1050</msg>
+<status status="PASS" starttime="20230509 21:47:39.420" endtime="20230509 21:47:39.420"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -791,16 +791,16 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.009" endtime="20230509 21:38:40.010"/>
+<status status="PASS" starttime="20230509 21:47:39.421" endtime="20230509 21:47:39.422"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.010" endtime="20230509 21:38:40.012"/>
+<status status="PASS" starttime="20230509 21:47:39.422" endtime="20230509 21:47:39.423"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.008" endtime="20230509 21:38:40.012"/>
+<status status="PASS" starttime="20230509 21:47:39.421" endtime="20230509 21:47:39.423"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.995" endtime="20230509 21:38:40.012"/>
+<status status="PASS" starttime="20230509 21:47:39.407" endtime="20230509 21:47:39.423"/>
 </test>
 <kw name="Delete User" library="setupTeardowns" type="TEARDOWN">
 <arg>${SUITE_USER_ID}</arg>
@@ -810,25 +810,25 @@
 <arg>expected_status=200</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20230509 21:38:40.024" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/2021 
- path_url=/users/2021 
+<msg timestamp="20230509 21:47:39.436" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1050 
+ path_url=/users/1050 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.024" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/2021 
+<msg timestamp="20230509 21:47:39.437" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1050 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
  body={"MESSAGE":"OK"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.025" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.013" endtime="20230509 21:38:40.025"/>
+<msg timestamp="20230509 21:47:39.437" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.425" endtime="20230509 21:47:39.437"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.013" endtime="20230509 21:38:40.025"/>
+<status status="PASS" starttime="20230509 21:47:39.425" endtime="20230509 21:47:39.437"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:39.985" endtime="20230509 21:38:40.025"/>
+<status status="PASS" starttime="20230509 21:47:39.399" endtime="20230509 21:47:39.437"/>
 </suite>
-<suite id="s1-s1-s2-s4" name="Verify Post Users Negative" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users\verify_post_users_negative.robot">
+<suite id="s1-s1-s2-s4" name="Verify Post Users Negative" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users\verify_post_users_negative.robot">
 <kw name="Authorize" library="setupTeardowns" type="SETUP">
 <if>
 <branch type="IF" condition="not ${GLOBAL_AUTH_SET}">
@@ -837,7 +837,7 @@
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.035" endtime="20230509 21:38:40.035"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.447" endtime="20230509 21:47:39.447"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -845,44 +845,44 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.036" endtime="20230509 21:38:40.037"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${responseJson}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.037" endtime="20230509 21:38:40.037"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${token}</var>
 <arg>${responseJson}</arg>
 <arg>token</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.037" endtime="20230509 21:38:40.037"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.037" endtime="20230509 21:38:40.037"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_HEADER}</arg>
 <arg>${headers}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.037" endtime="20230509 21:38:40.037"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_SET}</arg>
 <arg>${True}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.038" endtime="20230509 21:38:40.038"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.448" endtime="20230509 21:47:39.448"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:40.035" endtime="20230509 21:38:40.038"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.447" endtime="20230509 21:47:39.448"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.035" endtime="20230509 21:38:40.038"/>
+<status status="PASS" starttime="20230509 21:47:39.447" endtime="20230509 21:47:39.448"/>
 </if>
-<status status="PASS" starttime="20230509 21:38:40.035" endtime="20230509 21:38:40.038"/>
+<status status="PASS" starttime="20230509 21:47:39.447" endtime="20230509 21:47:39.448"/>
 </kw>
 <test id="s1-s1-s2-s4-t1" name="Verify Create User With 0 Contracts Is Not Working" line="10">
 <kw name="Custom Test Template">
@@ -890,7 +890,7 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_USERS}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.039" endtime="20230509 21:38:40.039"/>
+<status status="PASS" starttime="20230509 21:47:39.450" endtime="20230509 21:47:39.450"/>
 </kw>
 <kw name="Create New User" library="setupTeardowns">
 <var>${id}</var>
@@ -900,8 +900,8 @@
 <kw name="Create List" library="BuiltIn">
 <var>@{contracts}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230509 21:38:40.041" level="INFO">@{contracts} = [ ]</msg>
-<status status="PASS" starttime="20230509 21:38:40.040" endtime="20230509 21:38:40.041"/>
+<msg timestamp="20230509 21:47:39.451" level="INFO">@{contracts} = [ ]</msg>
+<status status="PASS" starttime="20230509 21:47:39.451" endtime="20230509 21:47:39.451"/>
 </kw>
 <if>
 <branch type="IF" condition="${numberOfContracts} &gt; ${0}">
@@ -917,21 +917,21 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.043" endtime="20230509 21:38:40.043"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.452"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.043" endtime="20230509 21:38:40.043"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.452"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:40.043" endtime="20230509 21:38:40.043"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.452"/>
 </iter>
-<status status="NOT RUN" starttime="20230509 21:38:40.043" endtime="20230509 21:38:40.043"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.453"/>
 </for>
-<status status="NOT RUN" starttime="20230509 21:38:40.041" endtime="20230509 21:38:40.043"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.453"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.041" endtime="20230509 21:38:40.043"/>
+<status status="PASS" starttime="20230509 21:47:39.452" endtime="20230509 21:47:39.453"/>
 </if>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -944,8 +944,8 @@
 <arg>surname=${surname}</arg>
 <arg>zip=${zip}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.044" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'tom', 'zip': '91343'}</msg>
-<status status="PASS" starttime="20230509 21:38:40.043" endtime="20230509 21:38:40.044"/>
+<msg timestamp="20230509 21:47:39.453" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [], 'email': 'tom@miller.com', 'name': 'miller', 'street': '1st street', 'surname': 'tom', 'zip': '91343'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.453" endtime="20230509 21:47:39.453"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -954,26 +954,26 @@
 <arg>expected_status=${expectedStatuscode}</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:40.048" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.457" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '156', 'Content-Type': 'application/json'} 
  body=b'{"active": true, "city": "Testcity", "contracts": [], "email": "tom@miller.com", "name": "miller", "street": "1st street", "surname": "tom", "zip": "91343"}' 
  </msg>
-<msg timestamp="20230509 21:38:40.048" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.457" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=400, reason=BAD REQUEST 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Connection': 'close'} 
  body={"ERROR":"There are only 1 to 3 contracts allowed."}
  
  </msg>
-<msg timestamp="20230509 21:38:40.049" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.044" endtime="20230509 21:38:40.049"/>
+<msg timestamp="20230509 21:47:39.457" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.453" endtime="20230509 21:47:39.457"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${userId}</var>
 <arg>${empty}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230509 21:38:40.049" level="INFO">${userId} = </msg>
-<status status="PASS" starttime="20230509 21:38:40.049" endtime="20230509 21:38:40.049"/>
+<msg timestamp="20230509 21:47:39.458" level="INFO">${userId} = </msg>
+<status status="PASS" starttime="20230509 21:47:39.457" endtime="20230509 21:47:39.458"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${expectedStatuscode}&quot; == &quot;201&quot;">
@@ -982,15 +982,15 @@
 <arg>${response.json()}</arg>
 <arg>ID</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.049" endtime="20230509 21:38:40.049"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.458" endtime="20230509 21:47:39.458"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:40.049" endtime="20230509 21:38:40.049"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.458" endtime="20230509 21:47:39.458"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.049" endtime="20230509 21:38:40.050"/>
+<status status="PASS" starttime="20230509 21:47:39.458" endtime="20230509 21:47:39.458"/>
 </if>
-<msg timestamp="20230509 21:38:40.050" level="INFO">${id} = </msg>
-<msg timestamp="20230509 21:38:40.050" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.039" endtime="20230509 21:38:40.050"/>
+<msg timestamp="20230509 21:47:39.458" level="INFO">${id} = </msg>
+<msg timestamp="20230509 21:47:39.458" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.451" endtime="20230509 21:47:39.458"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -998,18 +998,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.050" endtime="20230509 21:38:40.051"/>
+<status status="PASS" starttime="20230509 21:47:39.459" endtime="20230509 21:47:39.459"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.051" endtime="20230509 21:38:40.053"/>
+<status status="PASS" starttime="20230509 21:47:39.460" endtime="20230509 21:47:39.462"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.050" endtime="20230509 21:38:40.053"/>
+<status status="PASS" starttime="20230509 21:47:39.458" endtime="20230509 21:47:39.462"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.038" endtime="20230509 21:38:40.053"/>
+<status status="PASS" starttime="20230509 21:47:39.449" endtime="20230509 21:47:39.462"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.038" endtime="20230509 21:38:40.053"/>
+<status status="PASS" starttime="20230509 21:47:39.449" endtime="20230509 21:47:39.462"/>
 </test>
 <test id="s1-s1-s2-s4-t2" name="Verify Create User With 4 Contracts Is Not Working" line="12">
 <kw name="Custom Test Template">
@@ -1017,7 +1017,7 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_USERS}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.056" endtime="20230509 21:38:40.056"/>
+<status status="PASS" starttime="20230509 21:47:39.464" endtime="20230509 21:47:39.465"/>
 </kw>
 <kw name="Create New User" library="setupTeardowns">
 <var>${id}</var>
@@ -1027,8 +1027,8 @@
 <kw name="Create List" library="BuiltIn">
 <var>@{contracts}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230509 21:38:40.057" level="INFO">@{contracts} = [ ]</msg>
-<status status="PASS" starttime="20230509 21:38:40.057" endtime="20230509 21:38:40.057"/>
+<msg timestamp="20230509 21:47:39.466" level="INFO">@{contracts} = [ ]</msg>
+<status status="PASS" starttime="20230509 21:47:39.466" endtime="20230509 21:47:39.466"/>
 </kw>
 <if>
 <branch type="IF" condition="${numberOfContracts} &gt; ${0}">
@@ -1044,16 +1044,16 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.058" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:40.058" endtime="20230509 21:38:40.059"/>
+<msg timestamp="20230509 21:47:39.467" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.467" endtime="20230509 21:47:39.469"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:40.059" endtime="20230509 21:38:40.059"/>
+<status status="PASS" starttime="20230509 21:47:39.469" endtime="20230509 21:47:39.469"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.058" endtime="20230509 21:38:40.059"/>
+<status status="PASS" starttime="20230509 21:47:39.467" endtime="20230509 21:47:39.469"/>
 </iter>
 <iter>
 <var name="${counter}">1</var>
@@ -1064,16 +1064,16 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.059" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:40.059" endtime="20230509 21:38:40.059"/>
+<msg timestamp="20230509 21:47:39.469" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.469" endtime="20230509 21:47:39.469"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:40.059" endtime="20230509 21:38:40.060"/>
+<status status="PASS" starttime="20230509 21:47:39.469" endtime="20230509 21:47:39.469"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.059" endtime="20230509 21:38:40.060"/>
+<status status="PASS" starttime="20230509 21:47:39.469" endtime="20230509 21:47:39.469"/>
 </iter>
 <iter>
 <var name="${counter}">2</var>
@@ -1084,16 +1084,16 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.060" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:40.060" endtime="20230509 21:38:40.060"/>
+<msg timestamp="20230509 21:47:39.470" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.470" endtime="20230509 21:47:39.470"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:40.060" endtime="20230509 21:38:40.060"/>
+<status status="PASS" starttime="20230509 21:47:39.470" endtime="20230509 21:47:39.470"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.060" endtime="20230509 21:38:40.060"/>
+<status status="PASS" starttime="20230509 21:47:39.469" endtime="20230509 21:47:39.470"/>
 </iter>
 <iter>
 <var name="${counter}">3</var>
@@ -1104,22 +1104,22 @@
 <arg>price=${contractsPrice}</arg>
 <arg>type=${contractsType}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.061" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
-<status status="PASS" starttime="20230509 21:38:40.060" endtime="20230509 21:38:40.061"/>
+<msg timestamp="20230509 21:47:39.470" level="INFO">${contract} = {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}</msg>
+<status status="PASS" starttime="20230509 21:47:39.470" endtime="20230509 21:47:39.470"/>
 </kw>
 <kw name="Append To List" library="Collections">
 <arg>${contracts}</arg>
 <arg>${contract}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230509 21:38:40.061" endtime="20230509 21:38:40.061"/>
+<status status="PASS" starttime="20230509 21:47:39.470" endtime="20230509 21:47:39.471"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.060" endtime="20230509 21:38:40.061"/>
+<status status="PASS" starttime="20230509 21:47:39.470" endtime="20230509 21:47:39.471"/>
 </iter>
-<status status="PASS" starttime="20230509 21:38:40.058" endtime="20230509 21:38:40.061"/>
+<status status="PASS" starttime="20230509 21:47:39.467" endtime="20230509 21:47:39.471"/>
 </for>
-<status status="PASS" starttime="20230509 21:38:40.058" endtime="20230509 21:38:40.061"/>
+<status status="PASS" starttime="20230509 21:47:39.467" endtime="20230509 21:47:39.471"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.058" endtime="20230509 21:38:40.061"/>
+<status status="PASS" starttime="20230509 21:47:39.466" endtime="20230509 21:47:39.471"/>
 </if>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -1132,8 +1132,8 @@
 <arg>surname=${surname}</arg>
 <arg>zip=${zip}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230509 21:38:40.061" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}, {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}, {'currency': 'USD',...</msg>
-<status status="PASS" starttime="20230509 21:38:40.061" endtime="20230509 21:38:40.061"/>
+<msg timestamp="20230509 21:47:39.471" level="INFO">${body} = {'active': True, 'city': 'Testcity', 'contracts': [{'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}, {'currency': 'USD', 'id': '33', 'price': 9.99, 'type': 'basic'}, {'currency': 'USD',...</msg>
+<status status="PASS" starttime="20230509 21:47:39.471" endtime="20230509 21:47:39.471"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -1142,26 +1142,26 @@
 <arg>expected_status=${expectedStatuscode}</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:40.066" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.475" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21', 'Content-Length': '414', 'Content-Type': 'application/json'} 
  body=b'{"active": true, "city": "Testcity", "contracts": [{"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}, {"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}, {"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}, {"currency": "USD", "id": "33", "price": 9.99, "type": "basic"}], "email": "tom@miller.com", "name": "miller", "street": "1st street", "surname": "tom", "zip": "91343"}' 
  </msg>
-<msg timestamp="20230509 21:38:40.066" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.475" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=400, reason=BAD REQUEST 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '53', 'Connection': 'close'} 
  body={"ERROR":"There are only 1 to 3 contracts allowed."}
  
  </msg>
-<msg timestamp="20230509 21:38:40.066" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.061" endtime="20230509 21:38:40.066"/>
+<msg timestamp="20230509 21:47:39.475" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.471" endtime="20230509 21:47:39.475"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${userId}</var>
 <arg>${empty}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230509 21:38:40.066" level="INFO">${userId} = </msg>
-<status status="PASS" starttime="20230509 21:38:40.066" endtime="20230509 21:38:40.066"/>
+<msg timestamp="20230509 21:47:39.476" level="INFO">${userId} = </msg>
+<status status="PASS" starttime="20230509 21:47:39.475" endtime="20230509 21:47:39.476"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${expectedStatuscode}&quot; == &quot;201&quot;">
@@ -1170,15 +1170,15 @@
 <arg>${response.json()}</arg>
 <arg>ID</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.067" endtime="20230509 21:38:40.067"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.476" endtime="20230509 21:47:39.476"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:40.066" endtime="20230509 21:38:40.067"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.476" endtime="20230509 21:47:39.476"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.066" endtime="20230509 21:38:40.067"/>
+<status status="PASS" starttime="20230509 21:47:39.476" endtime="20230509 21:47:39.476"/>
 </if>
-<msg timestamp="20230509 21:38:40.067" level="INFO">${id} = </msg>
-<msg timestamp="20230509 21:38:40.067" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.056" endtime="20230509 21:38:40.067"/>
+<msg timestamp="20230509 21:47:39.476" level="INFO">${id} = </msg>
+<msg timestamp="20230509 21:47:39.476" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.465" endtime="20230509 21:47:39.476"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1186,25 +1186,25 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.068" endtime="20230509 21:38:40.069"/>
+<status status="PASS" starttime="20230509 21:47:39.476" endtime="20230509 21:47:39.478"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.069" endtime="20230509 21:38:40.071"/>
+<status status="PASS" starttime="20230509 21:47:39.478" endtime="20230509 21:47:39.480"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.067" endtime="20230509 21:38:40.071"/>
+<status status="PASS" starttime="20230509 21:47:39.476" endtime="20230509 21:47:39.480"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.055" endtime="20230509 21:38:40.071"/>
+<status status="PASS" starttime="20230509 21:47:39.464" endtime="20230509 21:47:39.480"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.055" endtime="20230509 21:38:40.071"/>
+<status status="PASS" starttime="20230509 21:47:39.464" endtime="20230509 21:47:39.481"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:40.027" endtime="20230509 21:38:40.072"/>
+<status status="PASS" starttime="20230509 21:47:39.438" endtime="20230509 21:47:39.482"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:39.901" endtime="20230509 21:38:40.074"/>
+<status status="PASS" starttime="20230509 21:47:39.289" endtime="20230509 21:47:39.484"/>
 </suite>
-<suite id="s1-s1-s3" name="Users Id" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users_id">
-<suite id="s1-s1-s3-s1" name="Verify Users Id" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\endpoints\users_id\verify_users_id.robot">
+<suite id="s1-s1-s3" name="Users Id" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users_id">
+<suite id="s1-s1-s3-s1" name="Verify Users Id" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\endpoints\users_id\verify_users_id.robot">
 <kw name="Authorize" library="setupTeardowns" type="SETUP">
 <if>
 <branch type="IF" condition="not ${GLOBAL_AUTH_SET}">
@@ -1213,7 +1213,7 @@
 <arg>username=admin</arg>
 <arg>password=masterPass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.087" endtime="20230509 21:38:40.087"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.496"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
@@ -1221,50 +1221,50 @@
 <arg>json=${jsonBody}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a POST request.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.087" endtime="20230509 21:38:40.087"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.496"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${responseJson}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.087" endtime="20230509 21:38:40.087"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.496"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${token}</var>
 <arg>${responseJson}</arg>
 <arg>token</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.087" endtime="20230509 21:38:40.087"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.497" endtime="20230509 21:47:39.497"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.087" endtime="20230509 21:38:40.087"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.497" endtime="20230509 21:47:39.497"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_HEADER}</arg>
 <arg>${headers}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.088" endtime="20230509 21:38:40.088"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.497" endtime="20230509 21:47:39.497"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${GLOBAL_AUTH_SET}</arg>
 <arg>${True}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20230509 21:38:40.088" endtime="20230509 21:38:40.088"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.497" endtime="20230509 21:47:39.497"/>
 </kw>
-<status status="NOT RUN" starttime="20230509 21:38:40.086" endtime="20230509 21:38:40.088"/>
+<status status="NOT RUN" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.497"/>
 </branch>
-<status status="PASS" starttime="20230509 21:38:40.086" endtime="20230509 21:38:40.088"/>
+<status status="PASS" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.497"/>
 </if>
-<status status="PASS" starttime="20230509 21:38:40.086" endtime="20230509 21:38:40.088"/>
+<status status="PASS" starttime="20230509 21:47:39.496" endtime="20230509 21:47:39.497"/>
 </kw>
 <test id="s1-s1-s3-s1-t1" name="Verify Existing User" line="9">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nSending Request To ${GLOBAL_ENDPOINT_USERS}/1\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.088" endtime="20230509 21:38:40.089"/>
+<status status="PASS" starttime="20230509 21:47:39.499" endtime="20230509 21:47:39.499"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
@@ -1272,19 +1272,19 @@
 <arg>expected_status=200</arg>
 <arg>headers=${GLOBAL_AUTH_HEADER}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:40.095" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.504" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer asfd234fkaDkf2asdf2a889DFJSFlsDFWf21'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.095" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.504" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '264', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '264', 'Connection': 'close'} 
  body={"active":true,"city":"Testcity","contracts":[{"currency":"USD","id":33,"price":9.99,"type":"basic"},{"currency":"USD","id":106,"price":39.99,"type":"premium-b"}],"email":"tom@miller.com","id":1,"name":"miller","street":"1st street","surname":"tom","zip":"99122"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.095" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.089" endtime="20230509 21:38:40.095"/>
+<msg timestamp="20230509 21:47:39.505" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.500" endtime="20230509 21:47:39.505"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1292,25 +1292,25 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.096" endtime="20230509 21:38:40.096"/>
+<status status="PASS" starttime="20230509 21:47:39.506" endtime="20230509 21:47:39.506"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.096" endtime="20230509 21:38:40.098"/>
+<status status="PASS" starttime="20230509 21:47:39.506" endtime="20230509 21:47:39.508"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.095" endtime="20230509 21:38:40.098"/>
+<status status="PASS" starttime="20230509 21:47:39.505" endtime="20230509 21:47:39.508"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.088" endtime="20230509 21:38:40.098"/>
+<status status="PASS" starttime="20230509 21:47:39.497" endtime="20230509 21:47:39.508"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:40.078" endtime="20230509 21:38:40.099"/>
+<status status="PASS" starttime="20230509 21:47:39.487" endtime="20230509 21:47:39.510"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:40.075" endtime="20230509 21:38:40.101"/>
+<status status="PASS" starttime="20230509 21:47:39.485" endtime="20230509 21:47:39.511"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:39.625" endtime="20230509 21:38:40.102"/>
+<status status="PASS" starttime="20230509 21:47:39.003" endtime="20230509 21:47:39.513"/>
 </suite>
-<suite id="s1-s2" name="Multiple Endpoints" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\multiple_endpoints">
-<suite id="s1-s2-s1" name="Verify Unauthorized" source="C:\Users\beyn\Downloads\rf_api_testing_udemy-main (1)\rf_api_testing_udemy-main\rf_code_basic\tests\api\multiple_endpoints\verify_unauthorized.robot">
+<suite id="s1-s2" name="Multiple Endpoints" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\multiple_endpoints">
+<suite id="s1-s2-s1" name="Verify Unauthorized" source="C:\Users\beyn\Desktop\swe_550_miray_ıyıdogan_robotfw\rf_code_basic\tests\api\multiple_endpoints\verify_unauthorized.robot">
 <test id="s1-s2-s1-t1" name="Verify Get Users Wrong Token" line="11">
 <kw name="Custom Test Template Get">
 <arg>${GLOBAL_ENDPOINT_USERS}</arg>
@@ -1321,19 +1321,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:40.122" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.532" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer i-am-no-token'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.122" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.532" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.122" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.117" endtime="20230509 21:38:40.122"/>
+<msg timestamp="20230509 21:47:39.532" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.527" endtime="20230509 21:47:39.532"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1341,18 +1341,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.123" endtime="20230509 21:38:40.123"/>
+<status status="PASS" starttime="20230509 21:47:39.533" endtime="20230509 21:47:39.533"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.123" endtime="20230509 21:38:40.124"/>
+<status status="PASS" starttime="20230509 21:47:39.533" endtime="20230509 21:47:39.535"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.122" endtime="20230509 21:38:40.124"/>
+<status status="PASS" starttime="20230509 21:47:39.532" endtime="20230509 21:47:39.535"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.117" endtime="20230509 21:38:40.125"/>
+<status status="PASS" starttime="20230509 21:47:39.526" endtime="20230509 21:47:39.535"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.116" endtime="20230509 21:38:40.125"/>
+<status status="PASS" starttime="20230509 21:47:39.526" endtime="20230509 21:47:39.536"/>
 </test>
 <test id="s1-s2-s1-t2" name="Verify Get Users Empty Token" line="13">
 <kw name="Custom Test Template Get">
@@ -1364,19 +1364,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:40.131" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.542" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': ''} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.131" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.542" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.131" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.127" endtime="20230509 21:38:40.131"/>
+<msg timestamp="20230509 21:47:39.542" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.537" endtime="20230509 21:47:39.542"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1384,18 +1384,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.132" endtime="20230509 21:38:40.132"/>
+<status status="PASS" starttime="20230509 21:47:39.542" endtime="20230509 21:47:39.543"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.132" endtime="20230509 21:38:40.134"/>
+<status status="PASS" starttime="20230509 21:47:39.543" endtime="20230509 21:47:39.544"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.131" endtime="20230509 21:38:40.134"/>
+<status status="PASS" starttime="20230509 21:47:39.542" endtime="20230509 21:47:39.544"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.127" endtime="20230509 21:38:40.134"/>
+<status status="PASS" starttime="20230509 21:47:39.537" endtime="20230509 21:47:39.544"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.126" endtime="20230509 21:38:40.134"/>
+<status status="PASS" starttime="20230509 21:47:39.537" endtime="20230509 21:47:39.545"/>
 </test>
 <test id="s1-s2-s1-t3" name="Verify Get Users Id Wrong Token" line="16">
 <kw name="Custom Test Template Get">
@@ -1407,19 +1407,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:40.140" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.551" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer i-am-no-token'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.140" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.551" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.140" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.136" endtime="20230509 21:38:40.140"/>
+<msg timestamp="20230509 21:47:39.551" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.547" endtime="20230509 21:47:39.551"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1427,18 +1427,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.141" endtime="20230509 21:38:40.141"/>
+<status status="PASS" starttime="20230509 21:47:39.553" endtime="20230509 21:47:39.553"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.141" endtime="20230509 21:38:40.144"/>
+<status status="PASS" starttime="20230509 21:47:39.553" endtime="20230509 21:47:39.554"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.140" endtime="20230509 21:38:40.144"/>
+<status status="PASS" starttime="20230509 21:47:39.551" endtime="20230509 21:47:39.554"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.136" endtime="20230509 21:38:40.144"/>
+<status status="PASS" starttime="20230509 21:47:39.546" endtime="20230509 21:47:39.555"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.135" endtime="20230509 21:38:40.144"/>
+<status status="PASS" starttime="20230509 21:47:39.546" endtime="20230509 21:47:39.555"/>
 </test>
 <test id="s1-s2-s1-t4" name="Verify Get Users Id Empty Token" line="18">
 <kw name="Custom Test Template Get">
@@ -1450,19 +1450,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20230509 21:38:40.149" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.561" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': ''} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.149" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.561" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.150" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.145" endtime="20230509 21:38:40.150"/>
+<msg timestamp="20230509 21:47:39.562" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.557" endtime="20230509 21:47:39.562"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1470,18 +1470,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.150" endtime="20230509 21:38:40.151"/>
+<status status="PASS" starttime="20230509 21:47:39.562" endtime="20230509 21:47:39.563"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.151" endtime="20230509 21:38:40.152"/>
+<status status="PASS" starttime="20230509 21:47:39.563" endtime="20230509 21:47:39.565"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.150" endtime="20230509 21:38:40.152"/>
+<status status="PASS" starttime="20230509 21:47:39.562" endtime="20230509 21:47:39.565"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.145" endtime="20230509 21:38:40.153"/>
+<status status="PASS" starttime="20230509 21:47:39.556" endtime="20230509 21:47:39.565"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.144" endtime="20230509 21:38:40.153"/>
+<status status="PASS" starttime="20230509 21:47:39.556" endtime="20230509 21:47:39.565"/>
 </test>
 <test id="s1-s2-s1-t5" name="Verify Post Users Wrong Token" line="21">
 <kw name="Custom Test Template Post">
@@ -1493,19 +1493,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:40.160" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.571" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer i-am-no-token', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.160" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.571" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.160" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.155" endtime="20230509 21:38:40.160"/>
+<msg timestamp="20230509 21:47:39.571" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.567" endtime="20230509 21:47:39.571"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1513,18 +1513,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.161" endtime="20230509 21:38:40.161"/>
+<status status="PASS" starttime="20230509 21:47:39.572" endtime="20230509 21:47:39.574"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.162" endtime="20230509 21:38:40.163"/>
+<status status="PASS" starttime="20230509 21:47:39.574" endtime="20230509 21:47:39.576"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.160" endtime="20230509 21:38:40.163"/>
+<status status="PASS" starttime="20230509 21:47:39.571" endtime="20230509 21:47:39.576"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.155" endtime="20230509 21:38:40.163"/>
+<status status="PASS" starttime="20230509 21:47:39.567" endtime="20230509 21:47:39.576"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.154" endtime="20230509 21:38:40.164"/>
+<status status="PASS" starttime="20230509 21:47:39.566" endtime="20230509 21:47:39.576"/>
 </test>
 <test id="s1-s2-s1-t6" name="Verify Post Users Empty Token" line="23">
 <kw name="Custom Test Template Post">
@@ -1536,19 +1536,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20230509 21:38:40.169" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.582" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.169" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+<msg timestamp="20230509 21:47:39.582" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.169" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.165" endtime="20230509 21:38:40.169"/>
+<msg timestamp="20230509 21:47:39.582" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.578" endtime="20230509 21:47:39.582"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1556,18 +1556,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.170" endtime="20230509 21:38:40.170"/>
+<status status="PASS" starttime="20230509 21:47:39.584" endtime="20230509 21:47:39.584"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.170" endtime="20230509 21:38:40.172"/>
+<status status="PASS" starttime="20230509 21:47:39.584" endtime="20230509 21:47:39.585"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.169" endtime="20230509 21:38:40.172"/>
+<status status="PASS" starttime="20230509 21:47:39.582" endtime="20230509 21:47:39.585"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.165" endtime="20230509 21:38:40.173"/>
+<status status="PASS" starttime="20230509 21:47:39.577" endtime="20230509 21:47:39.587"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.165" endtime="20230509 21:38:40.173"/>
+<status status="PASS" starttime="20230509 21:47:39.577" endtime="20230509 21:47:39.587"/>
 </test>
 <test id="s1-s2-s1-t7" name="Verify Delete Users Wrong Token" line="26">
 <kw name="Custom Test Template Delete">
@@ -1579,19 +1579,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20230509 21:38:40.179" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.591" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer i-am-no-token', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.179" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.591" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.179" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.174" endtime="20230509 21:38:40.179"/>
+<msg timestamp="20230509 21:47:39.591" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.588" endtime="20230509 21:47:39.593"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1599,18 +1599,18 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.180" endtime="20230509 21:38:40.180"/>
+<status status="PASS" starttime="20230509 21:47:39.593" endtime="20230509 21:47:39.593"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.180" endtime="20230509 21:38:40.182"/>
+<status status="PASS" starttime="20230509 21:47:39.593" endtime="20230509 21:47:39.595"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.179" endtime="20230509 21:38:40.182"/>
+<status status="PASS" starttime="20230509 21:47:39.593" endtime="20230509 21:47:39.595"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.174" endtime="20230509 21:38:40.182"/>
+<status status="PASS" starttime="20230509 21:47:39.588" endtime="20230509 21:47:39.595"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.174" endtime="20230509 21:38:40.183"/>
+<status status="PASS" starttime="20230509 21:47:39.588" endtime="20230509 21:47:39.595"/>
 </test>
 <test id="s1-s2-s1-t8" name="Verify Delete Users Empty Token" line="28">
 <kw name="Custom Test Template Delete">
@@ -1622,19 +1622,19 @@
 <arg>expected_status=401</arg>
 <arg>headers=${authHeader}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20230509 21:38:40.188" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.602" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': '', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20230509 21:38:40.188" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1 
+<msg timestamp="20230509 21:47:39.602" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/1 
  status=401, reason=UNAUTHORIZED 
- headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:38:40 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/2.2.3 Python/3.11.2', 'Date': 'Tue, 09 May 2023 18:47:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'close'} 
  body={"ERROR":"NOT AUTHORIZED"}
  
  </msg>
-<msg timestamp="20230509 21:38:40.189" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20230509 21:38:40.184" endtime="20230509 21:38:40.189"/>
+<msg timestamp="20230509 21:47:39.602" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20230509 21:47:39.598" endtime="20230509 21:47:39.602"/>
 </kw>
 <kw name="Validate Schema" library="validations">
 <arg>inputJson=${response.json()}</arg>
@@ -1642,24 +1642,24 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>Validating the JSON Schema!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230509 21:38:40.189" endtime="20230509 21:38:40.190"/>
+<status status="PASS" starttime="20230509 21:47:39.603" endtime="20230509 21:47:39.603"/>
 </kw>
 <kw name="Validate Json Schema" library="json_validate_schema">
 <arg>${inputJson}</arg>
 <arg>${referenceSchemaPath}</arg>
-<status status="PASS" starttime="20230509 21:38:40.190" endtime="20230509 21:38:40.192"/>
+<status status="PASS" starttime="20230509 21:47:39.603" endtime="20230509 21:47:39.604"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.189" endtime="20230509 21:38:40.192"/>
+<status status="PASS" starttime="20230509 21:47:39.602" endtime="20230509 21:47:39.604"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.184" endtime="20230509 21:38:40.192"/>
+<status status="PASS" starttime="20230509 21:47:39.597" endtime="20230509 21:47:39.606"/>
 </kw>
-<status status="PASS" starttime="20230509 21:38:40.183" endtime="20230509 21:38:40.192"/>
+<status status="PASS" starttime="20230509 21:47:39.597" endtime="20230509 21:47:39.606"/>
 </test>
-<status status="PASS" starttime="20230509 21:38:40.107" endtime="20230509 21:38:40.193"/>
+<status status="PASS" starttime="20230509 21:47:39.518" endtime="20230509 21:47:39.607"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:40.104" endtime="20230509 21:38:40.197"/>
+<status status="PASS" starttime="20230509 21:47:39.514" endtime="20230509 21:47:39.608"/>
 </suite>
-<status status="PASS" starttime="20230509 21:38:39.601" endtime="20230509 21:38:40.199"/>
+<status status="PASS" starttime="20230509 21:47:38.987" endtime="20230509 21:47:39.609"/>
 </suite>
 <statistics>
 <total>
