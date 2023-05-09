@@ -90,6 +90,29 @@ By executing this test case, you can ensure that the login API endpoint is funct
 
 By executing this test case, you can ensure that the Get All Users API endpoint is functioning correctly and returns the expected status code and response structure.
 
+### Verify Create New User ###
+Description: This test case verifies the functionality of creating a new user through the Create User API endpoint.
+
+**Steps:**
+1. Log a message to the console indicating the request is being sent to ${GLOBAL_ENDPOINT_USERS}.
+2. Send a request to create a new user.
+3. Store the ID of the created user in the variable ${id}.
+4. Set the suite variable ${SUITE_USER_ID} with the user ID.
+5. Validate the JSON response against the user post schema ${GLOBAL_SCHEMA_USER_POST} using the Validate Schema keyword.
+
+Please note that the above test case assumes the existence of the necessary resource files, variables, and keywords, and it should be adjusted as per your specific implementation.
+
+Test Case: Verify Existing User
+
+Description: This test case verifies the functionality of retrieving an existing user through the Get User API endpoint.
+
+Test Steps:
+
+Log a message to the console indicating the request is being sent to ${GLOBAL_ENDPOINT_USERS}/1.
+Send a GET request to retrieve the user with ID 1.
+Store the response in the variable ${response}.
+Validate the JSON response against the user ID schema ${GLOBAL_SCHEMA_USERS_ID} using the Validate Schema keyword.
+Please note that the above test case assumes the existence of the necessary resource files, variables, and keywords, and it should be adjusted as per your specific implementation.
 
 ## Unhappy Case
 
