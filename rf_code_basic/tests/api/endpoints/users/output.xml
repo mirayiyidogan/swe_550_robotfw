@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot generator="Robot 4.1 (Python 3.9.2 on win32)" generated="20211204 10:54:02.243" rpa="false" schemaversion="2">
-<suite id="s1" name="Robot Interactive Console" source="c:\Users\sveneFX\.vscode\extensions\robocorp.robotframework-lsp-0.31.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\mirayeFX\.vscode\extensions\robocorp.robotframework-lsp-0.31.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test">
 <kw name="Interpreter Main Loop" library="MainLoop">
 <kw>
